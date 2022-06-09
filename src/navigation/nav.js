@@ -1,27 +1,35 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Outlet, NavLink } from 'react-router-dom'
 
 const nav = () => {
     return (
-        <>
-            <nav>
-                <ul className="top-nav">
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/about">About</Link>
-                    </li>
-                    <li>
-                        <Link to="/projects">Projects</Link>
-                    </li>
-                    <li>
-                        <Link to="/contact">Contact</Link>
-                    </li>
-                </ul>
-            </nav>
+        <nav>
+            <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "link-active" : "link")}
+            >
+                Home
+            </NavLink>
+            <NavLink
+                to="/about"
+                className={({ isActive }) => (isActive ? "link-active" : "link")}
+            >
+                About
+            </NavLink>
+            <NavLink
+                to="/projects"
+                className={({ isActive }) => (isActive ? "link-active" : "link")}
+            >
+                Projects
+            </NavLink>
+            <NavLink
+                to="/contact"
+                className={({ isActive }) => (isActive ? "link-active" : "link")}
+            >
+                Contact
+            </NavLink>
             <Outlet></Outlet>
-        </>
+        </nav>
     )
 }
 

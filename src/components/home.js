@@ -1,15 +1,19 @@
 import React from 'react'
+import Typed from "react-typed"
 
 const home = () => {
   return (
-    <div>
-      <h1>
-        <span className="name">Yakshit Chawla</span>
-        <br />
-        <span>Front-End</span>
-        <br />
-        <span>Web Developer</span>
-      </h1>
+    <div className="name">
+      <Typed
+        strings={[
+          "Hello World <>",
+          "My name is Yakshit Chawla",
+          "I am a Front End Developer",
+        ]}
+        typeSpeed={150}
+        backSpeed={100}
+        loop
+      />
     </div>
   )
 }
